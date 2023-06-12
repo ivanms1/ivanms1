@@ -25,11 +25,6 @@ module.exports = function (plop) {
         path: "src/components/{{pascalCase name}}/{{pascalCase name}}.tsx",
         templateFile: "templates/Component.tsx.hbs",
       },
-      {
-        type: "add",
-        path: "src/components/{{pascalCase name}}/{{pascalCase name}}.module.scss",
-        templateFile: "templates/Component.module.scss.hbs",
-      },
     ],
   });
   plop.setGenerator("page", {
@@ -56,11 +51,6 @@ module.exports = function (plop) {
         type: "add",
         path: "src/pages/{{pascalCase name}}/index.tsx",
         templateFile: "templates/index.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/pages/{{pascalCase name}}/{{pascalCase name}}.module.scss",
-        templateFile: "templates/Component.module.scss.hbs",
       },
     ],
   });
