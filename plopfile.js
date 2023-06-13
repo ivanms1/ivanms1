@@ -39,18 +39,8 @@ module.exports = function (plop) {
     actions: [
       {
         type: "add",
-        path: "pages/{{kebabCase name}}/index.tsx",
-        templateFile: "templates/Page.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/pages/{{pascalCase name}}/{{pascalCase name}}.tsx",
+        path: "src/app/{{kebabCase name}}/page.tsx",
         templateFile: "templates/PageComponent.tsx.hbs",
-      },
-      {
-        type: "add",
-        path: "src/pages/{{pascalCase name}}/index.tsx",
-        templateFile: "templates/index.tsx.hbs",
       },
     ],
   });
