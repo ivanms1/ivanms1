@@ -1,6 +1,13 @@
 import { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Ivan Saldano",
@@ -13,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className={`dark ${montserrat.variable}`}>
       <body>{children}</body>
     </html>
   );

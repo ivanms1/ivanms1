@@ -1,3 +1,10 @@
 {
-  "welcome": "Welcome"
+  "hello": "Hi, I'm Ivan",
+  "description": "I am a software engineer, I love to build things and solve problems. I am passionate about technology and I am always looking for new challenges.",
+  "interests": "I am interested in web development, mobile development, cloud computing, machine learning and artificial intelligence.",
+  "articles-count": "{{count}} articles",
+  "view-code": "View this website's code",
+  "min-read": "minutes read",
+  "repositories": "Repositories",
+  "tech-stack": "Tech Stack"
 }
