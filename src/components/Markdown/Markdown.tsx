@@ -9,7 +9,6 @@ interface MarkdownProps {
 }
 
 function Markdown({ markdown }: MarkdownProps) {
-  console.log("markdown", MarkdownComponents);
   return (
     <ReactMarkdown
       className="prose-dark w-full lg:prose-xl"

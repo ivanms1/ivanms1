@@ -50,8 +50,6 @@ const MarkdownComponents: {
         return {};
       }
     };
-    console.log("hasLang", hasLang);
-
     return hasLang ? (
       <SyntaxHighlighter
         style={oneDark}

@@ -19,3 +19,16 @@ async function ArticlePage({ params }: { params: { id: string } }) {
 }
 
 export default ArticlePage;
+
+const getArticles = async (): Promise<Article[]> => {
+  const res = await fetch("https://dev.to/api/articles?username=ivanms1");
+  const json = await res.json();
+  return json;
+};
+
+export async function generateStaticParams() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    id: String(article?.id),
+  }));
+}
