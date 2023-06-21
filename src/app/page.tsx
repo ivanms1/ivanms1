@@ -1,4 +1,3 @@
-import useTranslation from "next-translate/useTranslation";
 import { Github, Rss, Twitter } from "lucide-react";
 import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
@@ -15,7 +14,6 @@ const getArticles = async (): Promise<ArticleType[]> => {
 };
 
 async function Home() {
-  const { t } = useTranslation("home");
   const data = await getArticles();
 
   return (
@@ -28,15 +26,20 @@ async function Home() {
             animationDuration={1500}
             show
           >
-            <p className="p-2 text-6xl font-bold text-black">{t("hello")}</p>
+            <p className="p-2 text-6xl font-bold text-black">
+              Hi, I&apos;m Ivan
+            </p>
           </RoughNotation>
 
           <div className="flex flex-col gap-2">
             <p className="text-xl leading-loose text-gray-400">
-              {t("description")}
+              I am a software engineer, I love to build things and solve
+              problems. I am passionate about technology and I am always looking
+              for new challenges.
             </p>
             <p className="text-xl  leading-loose text-gray-400">
-              {t("interests")}
+              I am interested in web development, mobile development, cloud
+              computing, machine learning and artificial intelligence.
             </p>
           </div>
           <div className="flex gap-4">
@@ -71,9 +74,7 @@ async function Home() {
         <div className="flex flex-col gap-4 lg:w-3/5">
           <div className="flex justify-between text-sm text-gray-400">
             <div className="flex items-center gap-1">
-              <p className="uppercase">
-                {t("articles-count", { count: data?.length ?? 0 })}
-              </p>
+              <p className="uppercase">{getArticles.length} articles</p>
               <Rss className="h-4 " />
             </div>
             <a
@@ -82,7 +83,7 @@ async function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="text-xs">{t("view-code")}</p>
+              <p className="text-xs">View this website&apos;s code</p>
               <Github className="h-4 " />
             </a>
           </div>

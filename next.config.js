@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextTranslate = require("next-translate-plugin");
 
-module.exports = nextTranslate({
+module.exports = {
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
@@ -10,4 +9,4 @@ module.exports = nextTranslate({
 
     return config;
   },
-});
+};

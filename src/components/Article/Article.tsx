@@ -1,6 +1,5 @@
 "use client";
 
-import useTranslation from "next-translate/useTranslation";
 import Link from "next/link";
 import React from "react";
 import { RoughNotation } from "react-rough-notation";
@@ -12,7 +11,6 @@ interface ArticleProps {
 }
 
 function Article({ article }: ArticleProps) {
-  const { t } = useTranslation("home");
   const [isHovered, setIsHovered] = React.useState(false);
   return (
     <Link
@@ -23,7 +21,7 @@ function Article({ article }: ArticleProps) {
     >
       <div className="px-1 text-sm text-gray-500">
         <span>{article.readable_publish_date}</span> <span>·</span>{" "}
-        {article.reading_time_minutes} {t("min-read")}
+        {article.reading_time_minutes} min read
       </div>
       <RoughNotation type="box" show={isHovered}>
         <p className="self-start px-1 text-xl font-bold text-white">
