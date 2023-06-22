@@ -1,0 +1,10 @@
+query ArticleBySlug($slug: String!) {
+  post(slug: $slug, hostname: "") {
+    cuid
+    title
+    dateAdded
+    slug
+    brief
+    contentMarkdown
+  }
+}

@@ -1,0 +1,11 @@
+overwrite: true
+schema: "https://api.hashnode.com"
+documents: "src/**/*.graphql"
+generates:
+  src/generated/graphql.tsx:
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+      - "fragment-matcher"
+    avoidOptionals: true

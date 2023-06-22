@@ -3,15 +3,9 @@ import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
 
 import Article from "@/components/Article";
-
-import type { Article as ArticleType } from "src/@types";
 import RightSection from "./rigth-section";
 
-const getArticles = async (): Promise<ArticleType[]> => {
-  const res = await fetch("https://dev.to/api/articles?username=ivanms1");
-  const json = await res.json();
-  return json;
-};
+import { getArticles } from "./services/articles";
 
 async function Home() {
   const data = await getArticles();
@@ -88,8 +82,8 @@ async function Home() {
             </a>
           </div>
           <div className="flex flex-col gap-16">
-            {data?.map((article) => (
-              <Article key={article.id} article={article} />
+            {data?.user?.publication?.posts?.map((article) => (
+              <Article key={article?.cuid} article={article} />
             ))}
           </div>
         </div>
