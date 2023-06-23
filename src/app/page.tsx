@@ -68,7 +68,7 @@ async function Home() {
         <div className="flex flex-col gap-4 lg:w-3/5">
           <div className="flex justify-between text-sm text-gray-400">
             <div className="flex items-center gap-1">
-              <p className="uppercase">{getArticles.length} articles</p>
+              <p className="uppercase">{data?.user?.numPosts} articles</p>
               <Rss className="h-4 " />
             </div>
             <a

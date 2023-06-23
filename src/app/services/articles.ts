@@ -34,6 +34,7 @@ export const getArticles = async () => {
 
   return {
     user: {
+      ...data?.user,
       publication: {
         posts: [
           ...(data?.user?.publication?.posts ?? []),
