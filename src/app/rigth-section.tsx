@@ -7,7 +7,7 @@ import RepositoryCard from "@/components/RepositoryCard";
 
 import { TECH_STACK } from "src/const";
 
-import type { Repository } from "src/services/repositories";
+import type { Repository } from "src/@types/repositories";
 
 interface RightSectionProps {
   repositories: Repository[];

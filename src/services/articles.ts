@@ -1,62 +1,9 @@
-import { getClient } from "lib/client";
+import { DEV_TO_API } from "src/const";
 
-import {
-  GetUserPostsQueryResult,
-  GetUserPostsQueryVariables,
-  GetUserPostsDocument,
-  ArticleBySlugDocument,
-  ArticleBySlugQueryResult,
-  ArticleBySlugQueryVariables,
-} from "src/generated/graphql";
+import type { Article } from "src/@types/articles";
 
-export const getArticles = async () => {
-  const client = getClient();
-
-  const { data } = await client.query<
-    GetUserPostsQueryResult["data"],
-    GetUserPostsQueryVariables
-  >({
-    query: GetUserPostsDocument,
-    variables: {
-      page: 0,
-    },
-  });
-
-  const { data: secondPageData } = await client.query<
-    GetUserPostsQueryResult["data"],
-    GetUserPostsQueryVariables
-  >({
-    query: GetUserPostsDocument,
-    variables: {
-      page: 1,
-    },
-  });
-
-  return {
-    user: {
-      ...data?.user,
-      publication: {
-        posts: [
-          ...(data?.user?.publication?.posts ?? []),
-          ...(secondPageData?.user?.publication?.posts ?? []),
-        ],
-      },
-    },
-  };
+export const getArticles = async (): Promise<Article[]> => {
+  const res = await fetch(DEV_TO_API);
+  const json = await res.json();
+  return json;
 };
-
-export async function fetchArticle(slug: string) {
-  if (!slug) throw new Error("slug is required");
-  const client = getClient();
-  const { data } = await client.query<
-    ArticleBySlugQueryResult["data"],
-    ArticleBySlugQueryVariables
-  >({
-    query: ArticleBySlugDocument,
-    variables: {
-      slug,
-    },
-  });
-
-  return data;
-}

@@ -101,3 +101,5 @@ export const TECH_STACK = [
     description: "A production-ready motion library for React.",
   },
 ] as const;
+
+export const DEV_TO_API = "https://dev.to/api/articles?username=ivanms1";

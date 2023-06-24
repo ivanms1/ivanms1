@@ -1,6 +1,6 @@
 import { Bookmark, StarIcon, GitForkIcon } from "lucide-react";
 
-import type { Repository } from "src/services/repositories";
+import type { Repository } from "src/@types/repositories";
 
 interface RepositoryCardProps {
   repository: Repository;
