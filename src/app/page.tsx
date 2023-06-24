@@ -1,14 +1,19 @@
-import { Github, Rss, Twitter } from "lucide-react";
+import { Rss } from "lucide-react";
 import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
 
 import Article from "@/components/Article";
 import RightSection from "./rigth-section";
 
-import { getArticles } from "./services/articles";
+import { getArticles } from "../services/articles";
+import { getPinnedRepositories } from "src/services/repositories";
+
+import GithubIcon from "@/assets/icons/github.svg";
+import TwitterIcon from "@/assets/icons/twitter.svg";
 
 async function Home() {
   const data = await getArticles();
+  const githubData = await getPinnedRepositories();
 
   return (
     <div className="flex min-h-screen flex-col gap-24 p-6 lg:px-56 lg:py-48">
@@ -78,7 +83,7 @@ async function Home() {
               rel="noopener noreferrer"
             >
               <p className="text-xs">View this website&apos;s code</p>
-              <Github className="h-4 " />
+              <GithubIcon className="h-4 " />
             </a>
           </div>
           <div className="flex flex-col gap-16">
@@ -87,7 +92,7 @@ async function Home() {
             ))}
           </div>
         </div>
-        <RightSection />
+        <RightSection repositories={githubData} />
       </div>
     </div>
   );
@@ -97,13 +102,13 @@ const SOCIALS = [
   {
     name: "GitHub",
     url: "https://github.com/ivanms1",
-    icon: Github,
+    icon: GithubIcon,
   },
   {
     name: "Twitter",
     url: "https://twitter.com/ivanms1",
-    icon: Twitter,
+    icon: TwitterIcon,
   },
-];
+] as const;
 
 export default Home;

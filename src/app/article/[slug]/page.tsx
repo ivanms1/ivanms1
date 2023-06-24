@@ -1,5 +1,5 @@
 import Markdown from "@/components/Markdown";
-import { fetchArticle, getArticles } from "src/app/services/articles";
+import { fetchArticle, getArticles } from "src/services/articles";
 
 async function ArticlePage({ params }: { params: { slug: string } }) {
   const data = await fetchArticle(params.slug);
