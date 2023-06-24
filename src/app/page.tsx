@@ -10,6 +10,7 @@ import { getPinnedRepositories } from "src/services/repositories";
 
 import GithubIcon from "@/assets/icons/github.svg";
 import TwitterIcon from "@/assets/icons/twitter.svg";
+import LinkedinIcon from "@/assets/icons/linkedin.svg";
 
 const TITLE_ANIMATION_DURATION = 1500;
 
@@ -18,27 +19,27 @@ async function Home() {
   const githubData = await getPinnedRepositories();
 
   return (
-    <div className="flex min-h-screen flex-col gap-24 p-6 lg:px-56 lg:py-48">
-      <div className="flex w-full flex-col justify-between lg:flex-row">
-        <div className="flex flex-col items-start gap-6 lg:w-3/5">
+    <div className="flex min-h-screen flex-col gap-24 px-6 py-12 lg:px-56 lg:py-48">
+      <div className="flex w-full flex-col items-center justify-between gap-6 lg:flex-row lg:items-start">
+        <div className="flex flex-col items-center gap-6 lg:w-3/5 lg:items-start">
           <RoughNotation
             type="highlight"
             color="white"
             animationDuration={TITLE_ANIMATION_DURATION}
             show
           >
-            <p className="p-2 text-6xl font-bold text-black">
+            <p className="p-2 text-5xl font-bold text-black lg:text-6xl">
               Hi, I&apos;m Ivan
             </p>
           </RoughNotation>
 
           <div className="flex flex-col gap-2">
-            <p className="text-xl leading-loose text-gray-400">
+            <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl">
               I am a software engineer, I love to build things and solve
               problems. I am passionate about technology and I am always looking
               for new challenges.
             </p>
-            <p className="text-xl  leading-loose text-gray-400">
+            <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl">
               I am interested in web development, mobile development, cloud
               computing, machine learning and artificial intelligence.
             </p>
@@ -49,14 +50,11 @@ async function Home() {
                 <a
                   key={social.name}
                   href={social.url}
-                  className="flex items-center gap-2"
+                  className="flex cursor-pointer items-center gap-2"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <social.icon
-                    size={30}
-                    className="transition-all hover:text-gray-400"
-                  />
+                  <social.icon className="w-6 fill-white transition-all hover:-translate-y-1" />
                 </a>
               );
             })}
@@ -71,7 +69,7 @@ async function Home() {
           src="/assets/images/ivan.jpg"
         />
       </div>
-      <div className="flex justify-between">
+      <div className="flex flex-col justify-between gap-6 lg:flex-row">
         <div className="flex flex-col gap-4 lg:w-3/5">
           <div className="flex justify-between text-sm text-gray-400">
             <div className="flex items-center gap-1">
@@ -110,6 +108,11 @@ const SOCIALS = [
     name: "Twitter",
     url: "https://twitter.com/ivanms1",
     icon: TwitterIcon,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ivansaldano/",
+    icon: LinkedinIcon,
   },
 ] as const;
 

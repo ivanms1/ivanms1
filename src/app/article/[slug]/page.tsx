@@ -6,7 +6,9 @@ async function ArticlePage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="flex flex-col items-center p-6 lg:px-96 lg:py-48">
-      <h1 className="mb-12 text-6xl font-bold">{data?.post?.title}</h1>
+      <h1 className="mb-12 text-3xl font-bold lg:text-6xl">
+        {data?.post?.title}
+      </h1>
       <Markdown markdown={data?.post?.contentMarkdown ?? ""} />
     </div>
   );
