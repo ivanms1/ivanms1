@@ -8,9 +8,9 @@ import RightSection from "./rigth-section";
 import { getArticles } from "../services/articles";
 import { getPinnedRepositories } from "src/services/repositories";
 
+import { SOCIALS } from "src/const";
+
 import GithubIcon from "@/assets/icons/github.svg";
-import TwitterIcon from "@/assets/icons/twitter.svg";
-import LinkedinIcon from "@/assets/icons/linkedin.svg";
 
 const TITLE_ANIMATION_DURATION = 1500;
 
@@ -35,13 +35,12 @@ async function Home() {
 
           <div className="flex flex-col gap-2">
             <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl">
-              I am a software engineer, I love to build things and solve
-              problems. I am passionate about technology and I am always looking
-              for new challenges.
+              Passionate about web development and constantly exploring new
+              technologies, I thrive on crafting sleek user interfaces.
             </p>
             <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl">
-              I am interested in web development, mobile development, cloud
-              computing, machine learning and artificial intelligence.
+              Mainly doing React, but interested on what the new upcoming JS
+              frameworks and tools have to offer.
             </p>
           </div>
           <div className="flex gap-4">
@@ -97,23 +96,5 @@ async function Home() {
     </div>
   );
 }
-
-const SOCIALS = [
-  {
-    name: "GitHub",
-    url: "https://github.com/ivanms1",
-    icon: GithubIcon,
-  },
-  {
-    name: "Twitter",
-    url: "https://twitter.com/ivanms1",
-    icon: TwitterIcon,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/ivansaldano/",
-    icon: LinkedinIcon,
-  },
-] as const;
 
 export default Home;

@@ -11,6 +11,9 @@ import FramerIcon from "@/assets/icons/framer.svg";
 import ReactQueryIcon from "@/assets/icons/react-query.svg";
 import ReactHookFormIcon from "@/assets/icons/react-hook-form.svg";
 import JotaiIcon from "@/assets/icons/jotai.svg";
+import GithubIcon from "@/assets/icons/github.svg";
+import TwitterIcon from "@/assets/icons/twitter.svg";
+import LinkedinIcon from "@/assets/icons/linkedin.svg";
 
 export const TECH_STACK = [
   {
@@ -103,3 +106,21 @@ export const TECH_STACK = [
 ] as const;
 
 export const DEV_TO_API = "https://dev.to/api/articles?username=ivanms1";
+
+export const SOCIALS = [
+  {
+    name: "GitHub",
+    url: "https://github.com/ivanms1",
+    icon: GithubIcon,
+  },
+  {
+    name: "Twitter",
+    url: "https://twitter.com/ivanms1",
+    icon: TwitterIcon,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ivansaldano/",
+    icon: LinkedinIcon,
+  },
+] as const;
