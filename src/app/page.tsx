@@ -11,6 +11,8 @@ import { getPinnedRepositories } from "src/services/repositories";
 import GithubIcon from "@/assets/icons/github.svg";
 import TwitterIcon from "@/assets/icons/twitter.svg";
 
+const TITLE_ANIMATION_DURATION = 1500;
+
 async function Home() {
   const data = await getArticles();
   const githubData = await getPinnedRepositories();
@@ -22,7 +24,7 @@ async function Home() {
           <RoughNotation
             type="highlight"
             color="white"
-            animationDuration={1500}
+            animationDuration={TITLE_ANIMATION_DURATION}
             show
           >
             <p className="p-2 text-6xl font-bold text-black">

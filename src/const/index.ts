@@ -73,14 +73,9 @@ export const TECH_STACK = [
     url: "https://pothos-graphql.dev/",
     description: "Plugin based GraphQL schema builder for typescript.",
   },
+
   {
-    name: "Framer Motion",
-    icon: FramerIcon,
-    url: "https://www.framer.com/motion/",
-    description: "A production-ready motion library for React.",
-  },
-  {
-    name: "TanStack Query/React Query",
+    name: "TanStack Query",
     icon: ReactQueryIcon,
     url: "https://tanstack.com/query/latest",
     description:
@@ -98,5 +93,11 @@ export const TECH_STACK = [
     icon: JotaiIcon,
     url: "https://jotai.pmnd.rs/",
     description: "Primitive and flexible state management for React.",
+  },
+  {
+    name: "Framer Motion",
+    icon: FramerIcon,
+    url: "https://www.framer.com/motion/",
+    description: "A production-ready motion library for React.",
   },
 ] as const;

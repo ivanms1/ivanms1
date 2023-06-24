@@ -1,8 +1,9 @@
 "use client";
 import { TabsTrigger } from "@radix-ui/react-tabs";
-import { BookIcon, Bookmark, GitForkIcon, Heart, StarIcon } from "lucide-react";
+import { BookIcon, Heart } from "lucide-react";
 
 import { Tabs, TabsContent, TabsList } from "@/components/Tabs";
+import RepositoryCard from "@/components/RepositoryCard";
 
 import { TECH_STACK } from "src/const";
 
@@ -34,31 +35,7 @@ function RightSection({ repositories }: RightSectionProps) {
       <TabsContent value="repos">
         <div className="flex flex-col gap-4">
           {repositories.map((repo) => {
-            return (
-              <a
-                key={repo?.id}
-                href={repo?.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col gap-1 rounded border p-4 transition-all hover:bg-slate-800"
-              >
-                <div className="flex items-center gap-1">
-                  <Bookmark className="h-4" />
-                  <span className="text-lg font-semibold">{repo?.name}</span>
-                </div>
-                <p className="text-sm text-gray-400">{repo?.description}</p>
-                <div className="flex gap-2">
-                  <div className="flex items-center">
-                    <StarIcon className="h-4" fill="white" stroke="white" />
-                    <span className="text-sm">{repo?.stargazerCount}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <GitForkIcon className="h-4" />
-                    <span className="text-sm">{repo?.forkCount}</span>
-                  </div>
-                </div>
-              </a>
-            );
+            return <RepositoryCard key={repo.id} repository={repo} />;
           })}
         </div>
       </TabsContent>
@@ -71,7 +48,7 @@ function RightSection({ repositories }: RightSectionProps) {
                 href={tech.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[110px] flex-col gap-1 rounded border p-4 transition-all hover:bg-slate-800"
+                className="flex min-h-[110px] flex-col gap-1 rounded border p-4 transition-all hover:-translate-y-1 hover:bg-slate-800"
               >
                 <div className="flex items-center gap-2">
                   <tech.icon className="h-4" />
