@@ -124,3 +124,5 @@ export const SOCIALS = [
     icon: LinkedinIcon,
   },
 ] as const;
+
+export const GITHUB_PROFILE_URL = "https://github.com/ivanms1/ivanms1";

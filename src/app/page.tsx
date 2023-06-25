@@ -8,7 +8,7 @@ import RightSection from "./rigth-section";
 import { getArticles } from "../services/articles";
 import { getPinnedRepositories } from "src/services/repositories";
 
-import { SOCIALS } from "src/const";
+import { GITHUB_PROFILE_URL, SOCIALS } from "src/const";
 
 import GithubIcon from "@/assets/icons/github.svg";
 
@@ -76,7 +76,7 @@ async function Home() {
               <Rss className="h-4 " />
             </div>
             <a
-              href="https://github.com/ivanms1/ivanms1"
+              href={GITHUB_PROFILE_URL}
               className="flex items-center gap-1 transition-all hover:text-gray-200"
               target="_blank"
               rel="noopener noreferrer"
