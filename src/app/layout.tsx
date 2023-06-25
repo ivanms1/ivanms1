@@ -12,6 +12,14 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Ivan Saldano",
   description: "Welcome to my website",
+  keywords: "ivan saldano, ivanms1, ivanms, ivan, saldano, blog, website",
+  creator: "Ivan Saldano",
+  openGraph: {
+    title: "Ivan Saldano",
+    description: "Welcome to my website",
+    url: "https://www.ivansaldano.com",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
