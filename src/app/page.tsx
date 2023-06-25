@@ -68,7 +68,7 @@ async function Home() {
           src="/assets/images/ivan.jpg"
         />
       </div>
-      <div className="flex flex-col justify-between gap-6 lg:flex-row">
+      <div className="flex flex-col justify-between gap-20 lg:flex-row lg:gap-6">
         <div className="flex flex-col gap-4 lg:w-3/5">
           <div className="flex justify-between text-sm text-gray-400">
             <div className="flex items-center gap-1">
