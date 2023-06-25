@@ -34,11 +34,11 @@ async function Home() {
           </RoughNotation>
 
           <div className="flex flex-col gap-2">
-            <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl">
+            <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl lg:leading-8">
               Passionate about web development and constantly exploring new
               technologies, I thrive on crafting sleek user interfaces.
             </p>
-            <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl">
+            <p className="text-center leading-8 text-gray-400 lg:text-start lg:text-xl lg:leading-8">
               Mainly doing React, but interested on what the new upcoming JS
               frameworks and tools have to offer.
             </p>
